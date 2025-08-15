@@ -1,0 +1,8 @@
+Ajouter dans la table users deux champs (email_private_1 et email_private_2)
+
+
+
+ALTER TABLE users
+ADD COLUMN email_private_1 VARCHAR(90) DEFAULT NULL,
+ADD COLUMN email_private_2 VARCHAR(90) DEFAULT NULL;
+
