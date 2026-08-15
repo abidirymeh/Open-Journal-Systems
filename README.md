@@ -4,6 +4,13 @@
 
 L'Université de Jendouba utilise **Open Journal Systems (OJS)** pour la gestion de ses revues scientifiques, mais la plateforme ne dispose d'aucune application mobile officielle et souffre de plusieurs limites d'ergonomie (clés de traduction non résolues, pages de connexion/inscription peu intuitives, absence de champs personnalisés dans les profils). Ce projet, réalisé dans le cadre d'un stage ouvrier, répond à ces limites en deux temps : l'amélioration de la plateforme OJS elle-même (thème, traductions, profils) et le développement d'une **application mobile React Native** connectée à OJS via une API REST personnalisée, afin de permettre aux utilisateurs de consulter leur tableau de bord, leurs soumissions, les sections et les revues depuis un smartphone.
 
+## Démonstration
+
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/Image2.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/Image5.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/Image3.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/Image4.jpg)
+
 ## Table des matières
 
 - 🪧 [À propos](#à-propos)
