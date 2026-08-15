@@ -1,0 +1,187 @@
+je suis entrain de développer une application mobile lié avec mon systéme ojs voici profile.tsx : import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, ActivityIndicator, ScrollView } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Icônes inspirées de Bootstrap
+
+const API_URL = 'http://192.168.1.66/ojs/index.php/humanite/api/v1/users';
+const TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.WyI4N2ZjYzExOWI0NWE1ZTk5NmZkNWJlYzQzNmRjZTcxZmRiNjM5NmY1Il0.ugW4pD4h8ww92cEEkMfbPboC7cr5Fas3PD9zqYCZCYM';
+
+export default function Profile() {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      try {
+        const response = await fetch(API_URL, {
+          headers: {
+            Authorization: `Bearer ${TOKEN}`,
+          },
+        });
+        const data = await response.json();
+        console.log("Données reçues :", data);
+        setUser(data.items?.[0] || null);
+      } catch (error) {
+        console.error('Erreur API :', error);
+        setUser(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserInfo();
+  }, []);
+
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size="large" color="#007bff" />
+      </View>
+    );
+  }
+
+  if (!user) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Profil utilisateur</Text>
+        <View style={styles.card}>
+          <Text style={styles.errorText}>Impossible de charger les données.</Text>
+        </View>
+      </View>
+    );
+  }
+
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.innerContainer}>
+        <Text style={styles.title}>Profil utilisateur</Text>
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Icon name="user" size={24} color="#fff" style={styles.icon} />
+            <Text style={styles.cardTitle}>Informations personnelles</Text>
+          </View>
+          <View style={styles.cardBody}>
+            <View style={styles.infoRow}>
+              <Icon name="user" size={18} color="#983434ff" style={styles.infoIcon} />
+              <Text style={styles.infoText}>
+                Nom : {user.fullName || 'Inconnu'} {user.familyName?.fr || ''}
+              </Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Icon name="envelope" size={18} color="#983434ff" style={styles.infoIcon} />
+              <Text style={styles.infoText}>Email : {user.email || 'Inconnu'}</Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Icon name="envelope-o" size={18} color="#983434ff" style={styles.infoIcon} />
+              <Text style={styles.infoText}>Email privé 1 : {user.email_private_1 || 'Inconnu'}</Text>
+            </View>
+            <View style={styles.infoRow}>
+              <Icon name="envelope-o" size={18} color="#983434ff" style={styles.infoIcon} />
+              <Text style={styles.infoText}>Email privé 2 : {user.email_private_2 || 'Inconnu'}</Text>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Icon name="users" size={24} color="#fff" style={styles.icon} />
+            <Text style={styles.cardTitle}>Groupes</Text>
+          </View>
+          <View style={styles.cardBody}>
+            {user.groups && user.groups.length > 0 ? (
+              user.groups.map((group, index) => (
+                <View key={index} style={styles.groupRow}>
+                  <Icon name="circle" size={12} color="#28a745" style={styles.groupIcon} />
+                  <Text style={styles.groupText}>{group.name || 'Inconnu'}</Text>
+                </View>
+              ))
+            ) : (
+              <Text style={styles.infoText}>Aucun groupe</Text>
+            )}
+          </View>
+        </View>
+      </View>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f8f9fa', // Fond gris clair inspiré de Bootstrap
+  },
+  innerContainer: {
+    padding: 20,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f8f9fa',
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#343a40', // Couleur sombre Bootstrap
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  card: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3, // Pour Android
+  },
+  cardHeader: {
+    backgroundColor: '#893434ff', // Bleu primaire Bootstrap
+    padding: 10,
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  cardTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#fff',
+  },
+  cardBody: {
+    padding: 15,
+  },
+  infoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  infoIcon: {
+    marginRight: 10,
+  },
+  infoText: {
+    fontSize: 16,
+    color: '#495057', // Couleur texte Bootstrap
+  },
+  groupRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  groupIcon: {
+    marginRight: 10,
+  },
+  groupText: {
+    fontSize: 16,
+    color: '#495057',
+  },
+  errorText: {
+    fontSize: 16,
+    color: '#dc3545', // Rouge pour erreur Bootstrap
+    textAlign: 'center',
+    padding: 15,
+  },
+  icon: {
+    marginRight: 10,
+  },
+});(le probléme que ce code est correct juste pour lutilisateur à ce token mais je voudrias solution pour que le code etre correct quelque soit lutilisateur sachant que le api key  est situé dans le profile dutilisateur 

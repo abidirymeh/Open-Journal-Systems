@@ -1,0 +1,6 @@
+1785148735a:3:{s:6:"domain";N;s:12:"plural-forms";s:25:"nplurals=2; plural=n > 1;";s:8:"messages";a:1:{s:0:"";a:4:{s:40:"emails.manualPaymentNotification.subject";s:31:"Notification de paiement manuel";s:37:"emails.manualPaymentNotification.body";s:413:"Un paiement manuel doit être traité pour la revue {$contextName} et l'utilisateur ou utilisatrice {$senderName} (nom d'utilisateur ou d'utilisatrice &quot;{$senderUsername}&quot;).<br />
+<br />
+L'élément facturé est &quot;{$paymentName}&quot;.<br />
+Le coût est de {$paymentAmount} ({$paymentCurrencyCode}).<br />
+<br />
+Ce courriel a été généré par le module de paiement manuel d'Open Journal Systems.";s:44:"emails.manualPaymentNotification.description";s:129:"Ce modèle de courriel est utilisé pour notifier un directeur ou une directrice de revue qu'un paiement manuel a été demandé.";s:57:"emailTemplate.variable.manualPaymentPlugin.senderUsername";s:58:"Le nom d'utilisateur de la personne ayant fait le paiement";}}}

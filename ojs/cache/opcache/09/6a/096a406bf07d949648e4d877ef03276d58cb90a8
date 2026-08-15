@@ -1,0 +1,1 @@
+1785152457a:3:{s:6:"domain";N;s:12:"plural-forms";s:25:"nplurals=2; plural=n > 1;";s:8:"messages";a:1:{s:0:"";a:3:{s:37:"plugins.block.developedBy.displayName";s:28:"Bloc « Développé par »";s:37:"plugins.block.developedBy.description";s:74:"Ce module fournit le lien « Développé par » dans la barre latérale.";s:36:"plugins.block.developedBy.blockTitle";s:15:"Développé par";}}}
