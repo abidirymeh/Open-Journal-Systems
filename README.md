@@ -6,10 +6,10 @@ L'Université de Jendouba utilise **Open Journal Systems (OJS)** pour la gestion
 
 ## Démonstration
 
-![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/Image2.jpg)
-![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/image5.jpg)
-![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/image3.jpg)
-![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/image4.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/connexionMobile.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/dashboard.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/inscription.jpg)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/c2115994f5a2bf1e0c92cdb846f53dadafb8fc2b/connexion.jpg)
 
 ## Table des matières
 
