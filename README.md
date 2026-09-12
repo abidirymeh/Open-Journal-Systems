@@ -6,8 +6,8 @@ L'Université de Jendouba utilise **Open Journal Systems (OJS)** pour la gestion
 
 ## Démonstration
 
-![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/ad6f86779e9f9de499664bfb07d2c19f7bdee4af/connexionMobile.png)
-![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/ad6f86779e9f9de499664bfb07d2c19f7bdee4af/dashboard.png)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/0c19f4b7332b6968715079faf1c65be989a64cf1/connexionMobile.jfif)
+![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/0c19f4b7332b6968715079faf1c65be989a64cf1/dashboard.jfif)
 ![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/ad6f86779e9f9de499664bfb07d2c19f7bdee4af/inscription.png)
 ![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/ad6f86779e9f9de499664bfb07d2c19f7bdee4af/connexion.png)
 
