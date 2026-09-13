@@ -1,139 +1,138 @@
-# UJPS — Université de Jendouba Publication System (Application Mobile)
+# UJPS — University of Jendouba Publication System (Mobile Application)
 
-## À propos
+## About
 
-L'Université de Jendouba utilise **Open Journal Systems (OJS)** pour la gestion de ses revues scientifiques, mais la plateforme ne dispose d'aucune application mobile officielle et souffre de plusieurs limites d'ergonomie (clés de traduction non résolues, pages de connexion/inscription peu intuitives, absence de champs personnalisés dans les profils). Ce projet, réalisé dans le cadre d'un stage ouvrier, répond à ces limites en deux temps : l'amélioration de la plateforme OJS elle-même (thème, traductions, profils) et le développement d'une **application mobile React Native** connectée à OJS via une API REST personnalisée, afin de permettre aux utilisateurs de consulter leur tableau de bord, leurs soumissions, les sections et les revues depuis un smartphone.
+The University of Jendouba uses **Open Journal Systems (OJS)** to manage its scientific journals, but the platform has no official mobile app and suffers from several usability limitations (unresolved translation keys, unintuitive login/registration pages, lack of custom fields in user profiles). This project, carried out as part of a work placement, addresses these limitations in two stages: improving the OJS platform itself (theme, translations, profiles) and developing a **React Native mobile application** connected to OJS via a custom REST API, allowing users to view their dashboard, submissions, sections, and journals from a smartphone.
 
-## Démonstration
+## Demo
 
 ![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/0c19f4b7332b6968715079faf1c65be989a64cf1/connexionMobile.jfif)
 ![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/0c19f4b7332b6968715079faf1c65be989a64cf1/dashboard.jfif)
 ![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/ad6f86779e9f9de499664bfb07d2c19f7bdee4af/inscription.png)
 ![image alt](https://github.com/abidirymeh/Open-Journal-Systems/blob/ad6f86779e9f9de499664bfb07d2c19f7bdee4af/connexion.png)
 
-## Table des matières
+## Table of Contents
 
-- 🪧 [À propos](#à-propos)
-- 📦 [Prérequis](#prérequis)
+- 🪧 [About](#about)
+- 📦 [Requirements](#requirements)
 - 🚀 [Installation](#installation)
-- 🛠️ [Utilisation](#utilisation)
-- 🤝 [Contribution](#contribution)
-- 🏗️ [Construit avec](#construit-avec)
+- 🛠️ [Usage](#usage)
+- 🤝 [Contributing](#contributing)
+- 🏗️ [Built With](#built-with)
 - 📚 [Documentation](#documentation)
-- 🏷️ [Gestion des versions](#gestion-des-versions)
-- 📝 [Licence](#licence)
+- 🏷️ [Versioning](#versioning)
+- 📝 [License](#license)
 
-## Prérequis
+## Requirements
 
-- **[Node.js](https://nodejs.org/)** (version LTS recommandée) et npm — pour exécuter le projet React Native/Expo.
-- **[Expo CLI](https://docs.expo.dev/more/expo-cli/)** — outil en ligne de commande pour lancer, builder et déboguer l'application.
-- **[Expo Go](https://expo.dev/go)** (Android/iOS) ou un émulateur Android/iOS — pour exécuter l'application en mode développement.
-- **[Git](https://git-scm.com/doc)** — pour cloner et versionner le dépôt.
-- Une instance **[Open Journal Systems (OJS)](https://docs.pkp.sfu.ca/)** (≥ 3.5) accessible avec l'API REST activée, installée par exemple via **[XAMPP](https://www.apachefriends.org/fr/index.html)** (Apache, PHP 8.2, MySQL, phpMyAdmin) en local.
-- **[Postman](https://learning.postman.com/docs/introduction/overview/)** (optionnel) — pour tester les endpoints de l'API REST OJS pendant le développement.
+- **[Node.js](https://nodejs.org/)** (LTS version recommended) and npm — to run the React Native/Expo project.
+- **[Expo CLI](https://docs.expo.dev/more/expo-cli/)** — command-line tool for running, building, and debugging the app.
+- **[Expo Go](https://expo.dev/go)** (Android/iOS) or an Android/iOS emulator — to run the app in development mode.
+- **[Git](https://git-scm.com/doc)** — to clone and version the repository.
+- An **[Open Journal Systems (OJS)](https://docs.pkp.sfu.ca/)** instance (≥ 3.5) accessible with the REST API enabled, installed for example via **[XAMPP](https://www.apachefriends.org/index.html)** (Apache, PHP 8.2, MySQL, phpMyAdmin) locally.
+- **[Postman](https://learning.postman.com/docs/introduction/overview/)** (optional) — to test the OJS REST API endpoints during development.
 
 ## Installation
 
 ```bash
-# 1. Cloner le dépôt
+# 1. Clone the repository
 git clone https://github.com/abidirymeh/Open-Journal-Systems.git
 cd Open-Journal-Systems
 
-# 2. Installer les dépendances du projet
+# 2. Install project dependencies
 npm install
 
-# 3. Copier le fichier d'environnement d'exemple et renseigner vos valeurs
+# 3. Copy the sample environment file and fill in your values
 cp .env.example .env
-# Éditer .env pour renseigner l'URL de l'API OJS et les identifiants nécessaires
+# Edit .env with the OJS API URL and required credentials
 ```
 
-## Utilisation
+## Usage
 
-### Lancer l'application en mode développement
+### Run the app in development mode
 
 ```bash
-# Démarrer le serveur de développement Expo
+# Start the Expo development server
 npx expo start
 ```
 
-Scannez ensuite le QR code affiché avec l'application **Expo Go**, ou appuyez sur `a` / `i` dans le terminal pour lancer un émulateur Android/iOS.
+Then scan the displayed QR code with the **Expo Go** app, or press `a` / `i` in the terminal to launch an Android/iOS emulator.
 
-### Lancer sur une plateforme spécifique
+### Run on a specific platform
 
 ```bash
-npx expo start --android   # Émulateur/périphérique Android
-npx expo start --ios       # Simulateur iOS
-npx expo start --web       # Version web (aperçu)
+npx expo start --android   # Android emulator/device
+npx expo start --ios       # iOS simulator
+npx expo start --web       # Web version (preview)
 ```
 
-### Vérifier le typage TypeScript
+### Check TypeScript typing
 
 ```bash
 npx tsc --noEmit
 ```
 
-## Contribution
+## Contributing
 
-### Flux de contribution
+### Contribution workflow
 
 ```bash
-# 1. Créer une branche dédiée à partir de main
-git checkout -b feature/nom-de-la-fonctionnalite
+# 1. Create a dedicated branch from main
+git checkout -b feature/feature-name
 
-# 2. Effectuer vos modifications, puis les committer
+# 2. Make your changes, then commit them
 git add .
-git commit -m "feat: description courte de la modification"
+git commit -m "feat: short description of the change"
 
-# 3. Pousser la branche sur le dépôt distant
-git push origin feature/nom-de-la-fonctionnalite
+# 3. Push the branch to the remote repository
+git push origin feature/feature-name
 
-# 4. Ouvrir une Pull Request vers la branche main pour revue
+# 4. Open a Pull Request against the main branch for review
 ```
 
-Merci de respecter la convention de nommage des commits ([Conventional Commits](https://www.conventionalcommits.org/fr/)) et de vérifier que l'application démarre correctement (`npx expo start`) avant d'ouvrir une Pull Request.
+Please follow the commit naming convention ([Conventional Commits](https://www.conventionalcommits.org/)) and make sure the app starts correctly (`npx expo start`) before opening a Pull Request.
 
-## Construit avec
+## Built With
 
-### Langages & Frameworks
+### Languages & Frameworks
 
-- **[TypeScript](https://www.typescriptlang.org/docs/)** — langage principal du projet, typage statique sur base JavaScript.
-- **[React Native](https://reactnative.dev/docs/getting-started)** — framework de développement d'applications mobiles multiplateformes.
-- **[Expo](https://docs.expo.dev/)** — plateforme et outillage facilitant le développement, le build et la distribution de l'application React Native.
-- **[Expo Router](https://docs.expo.dev/router/introduction/)** — système de navigation basé sur le routage par fichiers.
-- **[React Navigation](https://reactnavigation.org/docs/getting-started)** — bibliothèque de navigation (stack navigator) utilisée en complément.
-- **[Open Journal Systems (OJS)](https://docs.pkp.sfu.ca/)** — plateforme de gestion de revues scientifiques, source des données consommées par l'application via son API REST.
-- **[PHP](https://www.php.net/docs.php)** — langage côté serveur pour les scripts de l'API REST personnalisée reliant l'application à OJS.
-- **[MySQL](https://dev.mysql.com/doc/)** — système de gestion de base de données relationnelle utilisé par OJS.
+- **[TypeScript](https://www.typescriptlang.org/docs/)** — the project's main language, adding static typing on top of JavaScript.
+- **[React Native](https://reactnative.dev/docs/getting-started)** — framework for building cross-platform mobile applications.
+- **[Expo](https://docs.expo.dev/)** — platform and tooling that streamlines developing, building, and distributing the React Native app.
+- **[Expo Router](https://docs.expo.dev/router/introduction/)** — file-based routing navigation system.
+- **[React Navigation](https://reactnavigation.org/docs/getting-started)** — navigation library (stack navigator) used alongside it.
+- **[Open Journal Systems (OJS)](https://docs.pkp.sfu.ca/)** — scientific journal management platform, the source of the data consumed by the app via its REST API.
+- **[PHP](https://www.php.net/docs.php)** — server-side language for the custom REST API scripts connecting the app to OJS.
+- **[MySQL](https://dev.mysql.com/doc/)** — relational database management system used by OJS.
 
-### Outils
+### Tools
 
 #### CI
 
-Aucune intégration continue n'est actuellement configurée sur ce dépôt.
+No continuous integration is currently configured on this repository.
 
-> À définir : mise en place possible d'un pipeline (ex. GitHub Actions) pour l'exécution du linting/typage TypeScript à chaque Pull Request.
+> To be defined: possible setup of a pipeline (e.g. GitHub Actions) to run TypeScript linting/type-checking on every Pull Request.
 
-#### Déploiement
+#### Deployment
 
-Aucun déploiement automatisé n'est actuellement configuré. Le build et la distribution de l'application peuvent être réalisés manuellement via :
+No automated deployment is currently configured. Building and distributing the app can be done manually via:
 
-- **[Expo Application Services (EAS)](https://docs.expo.dev/eas/)** — pour builder et publier l'application sur les stores (Android/iOS).
-- **[Ngrok](https://ngrok.com/docs)** — pour exposer temporairement le serveur OJS local à Internet lors des phases de test.
+- **[Expo Application Services (EAS)](https://docs.expo.dev/eas/)** — to build and publish the app to the stores (Android/iOS).
+- **[Ngrok](https://ngrok.com/docs)** — to temporarily expose the local OJS server to the internet during testing phases.
 
 ## Documentation
 
-- Documentation officielle d'OJS/PKP : [docs.pkp.sfu.ca](https://docs.pkp.sfu.ca/)
-- Documentation officielle d'Expo : [docs.expo.dev](https://docs.expo.dev/)
+- Official OJS/PKP documentation: [docs.pkp.sfu.ca](https://docs.pkp.sfu.ca/)
+- Official Expo documentation: [docs.expo.dev](https://docs.expo.dev/)
 
-## Gestion des versions
+## Versioning
 
-Afin de maintenir un cycle de publication claire et de favoriser la rétrocompatibilité, la dénomination des versions suit la spécification décrite par la [Gestion sémantique de version](https://semver.org/lang/fr/).
+To maintain a clear release cycle and support backward compatibility, version naming follows the specification described by [Semantic Versioning](https://semver.org/).
 
-## Auteur
+## Author
 
-Rimeh Abidi : rimeh.abidi@enis.tn
+Rimeh Abidi: rimeh.abidi@enis.tn
 
+## License
 
-## Licence
-
-Voir le fichier [LICENSE](./LICENSE.md) du dépôt.
+See the repository's [LICENSE](./LICENSE.md) file.
